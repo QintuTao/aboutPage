@@ -4,7 +4,7 @@
   padding: 0;
 }
 body {
-  background: #15301a;
+  background: #000000;
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
 .skw-pages {
@@ -105,10 +105,10 @@ body {
   background: #292929;
 }
 .skw-page-2 .skw-page__half--right .skw-page__content {
-  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/slider-2.jpg');
+  
 }
 .skw-page-3 .skw-page__half--left .skw-page__content {
-  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/mousover-img-2.jpg');
+
 }
 .skw-page-3 .skw-page__half--right .skw-page__content {
   background: #292929;
@@ -117,10 +117,10 @@ body {
   background: #292929;
 }
 .skw-page-4 .skw-page__half--right .skw-page__content {
-  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/sections-3.jpg');
+
 }
 .skw-page-5 .skw-page__half--left .skw-page__content {
-  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/img-test.jpg');
+
 }
 .skw-page-5 .skw-page__half--right .skw-page__content {
   background: #292929;
@@ -133,4 +133,23 @@ body {
 #selfPortrait{
   width: ;
   height: 100vh;
+}
+
+#myName{
+  position: absolute;
+  z-index: 100000000000000000;
+  font-size: 10vw;
+  font-family: "Raleway";
+  color:#FEDC14;
+  left:30vw;
+  top:40vh;
+  overflow: hidden;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.hide{
+
 }
