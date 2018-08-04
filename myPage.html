@@ -1,69 +1,165 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>work</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-	
-	
-</head>
-<body id="body">
-	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #000000;
+  font-family: 'Raleway';
+}
+.skw-pages {
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+}
+.skw-page {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+.skw-page__half {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100vh;
+  transition: transform 1s;
+}
+.skw-page__half--left {
+  left: 0;
+  transform: translate3d(-17.4vh, 100%, 0);
+}
+.skw-page__half--right {
+  left: 50%;
+  transform: translate3d(17.4vh, -100%, 0);
+}
+.skw-page.active .skw-page__half {
+  transform: translate3d(0, 0, 0);
+}
+.skw-page__skewed {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 140%;
+  height: 100%;
+  transform: skewX(-10deg);
+  background: #000;
+}
+.skw-page__half--left .skw-page__skewed {
+  left: -40%;
+}
+.skw-page__half--right .skw-page__skewed {
+  right: -40%;
+}
+.skw-page__content {
+  display:inline-block;
+  align-items: center;
+  vertical-align: center;
+  justify-content: center;
+  flex-flow: column wrap;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0 30%;
+  color: #fff;
+  transform: skewX(10deg);
+  transition: transform 1s, opacity 1s;
+  background-size: cover;
+}
+.skw-page__half--left .skw-page__content {
+  padding-left: 20%;
+  padding-right: 20%;
+  transform-origin: 100% 0;
+}
+.skw-page__half--right .skw-page__content {
+  padding-left: 15%;
+  padding-right: 30%;
+  transform-origin: 0 100%;
+}
+.skw-page.inactive .skw-page__content {
+  opacity: 0.5;
+  transform: skewX(10deg) scale(0.95);
+}
+.skw-page__heading {
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-size: 25px;
+  text-align: center;
+  font-family: "Raleway";
+}
+.skw-page__description {
+  font-size: 30px;
+  text-align: center;
+}
+.skw-page__link {
+  color: #ffa0a0;
+}
+.skw-page-1 .skw-page__half--left .skw-page__content {
+  background-color: #2c2c2c;
+}
+.skw-page-1 .skw-page__half--right .skw-page__content {
+  background-image: url('SelfPortrait.png');
+}
+.skw-page-2 .skw-page__half--left .skw-page__content {
+  background: #eee;
+}
+.skw-page-2 .skw-page__half--right .skw-page__content {
+  background: #292929;
+}
+.skw-page-3 .skw-page__half--left .skw-page__content {
 
-	
+}
+.skw-page-3 .skw-page__half--right .skw-page__content {
+  background: #292929;
+}
+.skw-page-4 .skw-page__half--left .skw-page__content {
+  background: #292929;
+}
+.skw-page-4 .skw-page__half--right .skw-page__content {
 
-	
-	<!-- page one -->
-	<div class="skw-pages">
-		
+}
+.skw-page-5 .skw-page__half--left .skw-page__content {
 
-
-  	<div class="skw-page skw-page-1 active">
-  		<div id="myName">
-  			<span>Q</span>
-  			<span>I</span>
-  			<span>N</span>
-  			<span>T</span>
-  			<span>U</span>
-  			<span class="dotca">.</span>
-  			<span class="dotca">c</span>
-  			<span class="dotca">a</span>
-  		</div>
-    	<div class="skw-page__half skw-page__half--left">
-      		<div class="skw-page__skewed">
-	        	<div class="skw-page__content">
-
-		        </div>
-	      </div>
-	    </div>
-	    
+}
+.skw-page-5 .skw-page__half--right .skw-page__content {
+  background: #292929;
+}
 
 
 
 
 
+#selfPortrait{
+  width: ;
+  height: 100vh;
+}
 
-
-    <div class="skw-page__half skw-page__half--right">
-      <div class="skw-page__skewed">
-        <div class="skw-page__content">
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-
-
-
-
-
-
-
-
-
+#myName{
+  display: inline-block;
+  pointer-events: none;
+  position: absolute;
+  z-index: 100;
+  font-size: 10vw;
+  font-family: "Raleway";
+  color:#FEDC14;
+  left:8.78vw;
+  top:20vh;
+  overflow: hidden;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+#dot{
+  font-size: 4vw;
+}
+.dotca{
+  font-size: 10vw;
+  color: #222222;
+}
 
 
 
@@ -73,474 +169,269 @@
 
 
 
-<!-- page two -->
+.pie-container {
+  transition: padding .7s ease;
+  padding: 10px 13%;
+  margin-top: 20vh;
+  width: 100%;
+  z-index: 1000;
+}
 
-  <div class="skw-page skw-page-2">
-    <div class="skw-page__half skw-page__half--left">
-      <div class="skw-page__skewed">
-        <div class="skw-page__content">
-        <div class="pie-container">
-		  <div class="row">
-		    <div class="col-md-5" id="pieChart"></div>
-		  </div>
-		</div>
+#pieChart {
+  max-width: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  counter-reset: break-point 80;
+}
+#pieChart svg {
+  overflow: visible;
+  transition: width .7s ease;
+}
+#pieChart path {
+  cursor: pointer;
+}
 
+#pieText {
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 50px;
+}
+#pieText .panel {
+  transform: skewX(-10deg);
+  background-color: #292929;
+/*  border: groove 4px #292929;*/
+/*  box-shadow: 8px 10px 20px #292929, 4px 5px 25px #292929;*/
+  width: 100%;
+  height: 400px;
+  border-radius: 7px;
+  padding: 0 3px;
+  float: left;
+  transition: height .7s ease, padding .7s ease;
+  perspective: 650px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+.content-wrapper {
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
 
-             
-		<script src='https://d3js.org/d3.v5.min.js'></script>
-		<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-		<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js'></script>
-		<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TimelineLite.min.js'></script>
+#segmentTitle, #segmentText {
+  text-shadow: 1px 1px 3px #000, 1px 1px 3px #292929;
+  text-align: center;
+}
 
-  
-
-    <script >
-      // Credit to Alan at https://codepen.io/amwill04/pen/NGmjyr
-
-// When on tablet or phone, initially run or restart the pen from under 767px screen width so that the angle of the selected pie slice animates down instead of to the right when the description box is underneath it.
-
-var data = [{
-  "Title": "HTML",
-  "Amount": 100,
-  "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent rutrum metus vel odio convallis condimentum. Integer ullamcorper ipsum vel dui varius congue. Nulla facilisi. Morbi molestie tortor libero, ac placerat urna mollis ac. Vestibulum id ipsum mauris."
-}, {
-  "Title": "CSS",
-  "Amount": 1000,
-  "Description": "In hac habitasse platea dictumst. Curabitur lacus neque, congue ac quam a, sagittis accumsan mauris. Suspendisse et nisl eros. Fusce nulla mi, tincidunt non faucibus vitae, aliquam vel dolor. Maecenas imperdiet, elit eget condimentum fermentum, sem lorem fringilla felis, vitae cursus lorem elit in risus."
-}, {
-  "Title": "Javascript",
-  "Amount": 2750,
-  "Description": "Aenean faucibus, risus sed eleifend rutrum, leo diam porttitor mauris, a eleifend ipsum ipsum ac ex. Nam scelerisque feugiat augue ac porta. Morbi massa ante, interdum sed nulla nec, finibus cursus augue. Phasellus nunc neque, blandit a nunc ut, mattis elementum arcu."
-}, {
-  "Title": "JSON",
-  "Amount": 600,
-  "Description": "Laboriosam pariatur recusandae ipsum nisi, saepe doloremque nobis eaque omnis commodi dolor porro? Error, deserunt veritatis officiis porro libero et suscipit ad. Ipsum dolor sit amet consectetur adipisicing elit."
-}, {
-  "Title": "React JSX",
-  "Amount": 2000,
-  "Description": "Sit amet consectetur adipisicing elit. Nemo totam perspiciatis tenetur quod ipsam voluptas et consequatur labore harum obcaecati alias voluptate id sit, praesentium ratione nostrum maxime reprehenderit. Deserunt veritatis officiis porro libero et suscipit ad."
-}, {
-  "Title": "WebGL",
-  "Amount": 100,
-  "Description": "Consectetur adipisicing elit. Architecto illum quidem eligendi, consectetur corporis esse enim eveniet distinctio beatae dignissimos recusandae, ipsam aspernatur labore cupiditate, suscipit corrupti accusantium voluptates laborum."
-}, {
-  "Title": "Express",
-  "Amount": 750,
-  "Description": "Beatae, aperiam voluptas aut atque laborum dolorem fuga. Corporis aperiam, illo nobis suscipit perferendis natus doloremque id ratione modi, veritatis beatae maiores Lorem ipsum dolor sit, amet consectetur."
-}, {
-  "Title": "Pug",
-  "Amount": 400,
-  "Description": "Amet consectetur, adipisicing elit. Ipsum perferendis rem illo explicabo voluptate, voluptatum id expedita sapiente magni laboriosam maiores molestiae ut accusamus impedit quos ex excepturi porro voluptates. Nunc dolor metus, aliquam vitae felis id, euismod vulputate metus."
-}, {
-  "Title": "Sass",
-  "Amount": 800,
-  "Description": "Architecto illum quidem eligendi, consectetur corporis esse enim eveniet distinctio beatae dignissimos recusandae, ipsam aspernatur labore cupiditate, suscipit corrupti accusantium voluptates laborum."
-}, {
-  "Title": "MongoDB",
-  "Amount": 450,
-  "Description": "Dolor sit amet consectetur adipisicing elit. Beatae, aperiam. Voluptas aut atque laborum dolorem fuga? Corporis aperiam, illo nobis suscipit perferendis natus doloremque id ratione modi, veritatis beatae maiores."
-}, {
-  "Title": "Bootstrap",
-  "Amount": 450,
-  "Description": "Recusandae ipsum nisi, saepe doloremque nobis eaque omnis commodi dolor porro? Error, deserunt veritatis officiis porro libero et suscipit ad. Dolor sit amet consectetur adipisicing elit. Nemo totam perspiciatis tenetur quod ipsam voluptas et consequatur labore harum obcaecati alias voluptate."
-}];
-
-var width = parseInt(d3.select('#pieChart').style('width'), 10);
-var height = width;
-var radius = (Math.min(width, height) - 15) / 2;
-
-var total = 0;      // used to calculate %s
-data.forEach((d) => {
-  total += d.Amount;
-})
-
-var title = function getObject(obj) {
-  titles = [];
-  for (var i = 0; i < obj.length; i++) {
-    titles.push(obj[i].Title);
+#segmentTitle {
+  transition: padding .7s ease;
+  padding: 20px;
+  font-size: calc( 19px + (35 - 19) * (100vw - 200px) / (1314 - 200));
+}
+@media screen and (max-width: 200px) {
+  #segmentTitle {
+    font-size: 19px;
   }
-  return titles
-};
-
-
-
-// grabs the responsive value in 'counter-reset' css value
-let innerRadius = $('#pieChart').css('counter-reset').split(' ')[1];
-
-var arcOver = d3.arc()
-  .outerRadius(radius + 10)
-  .innerRadius(innerRadius);
-
-
-var color = d3.scaleOrdinal(d3.schemeCategory20); 
-color.domain(title(data))
-  //.range(["#2BDFBB", "#DF2B4F", "#EE6617", "#FFBF00", '#423E6E', '#E24161']);
-     
-  //.range(['#0B00FF', '#0097FF', '#00FFF0', '#00FF74', '#0BFF00', '#FFF900', '#FF5500', '#FF0500', '#FF007F', '#B800FF', '#99FF00']) 
-  .range(["#FEDC14", "#223983", "#EE6617", "#5C2899"]);
-
-// Comment Out Below to Use Diff Color Scheme
-//var color = d3.scaleOrdinal(d3.schemeCategory10);
-//color.domain(title(data))
-
-var arc = d3.arc()
-  .outerRadius(radius - 10)
-  .innerRadius(innerRadius);
-
-var pie = d3.pie()
-  .sort(null)
-  .value(function(d) {
-    return +d.Amount;
-  });
-
-
-// direction of the slice angle (for responsiveness)
-let sliceDirection = 100;
-if(window.matchMedia("(max-width: 767px)").matches) {
-  sliceDirection = 180;
+}
+@media screen and (min-width: 1314px) {
+  #segmentTitle {
+    font-size: 35px;
+  }
 }
 
-
-var prevSegment = null;
-var change = function(d, i) {
-  var angle = sliceDirection - ((d.startAngle * (180 / Math.PI)) +((d.endAngle - d.startAngle) * (180 / Math.PI) / 2));
-
-  svg.transition()
-    .duration(1000)
-    .attr("transform", "translate(" + radius +
-          "," + height / 2 + ") rotate(" + angle + ")");
-  d3.select(prevSegment)
-    .transition()
-    .attr("d", arc)
-    .style('filter', '');
-  prevSegment = i;
-
-  d3.select(i)
-    .transition()
-    .duration(1000)
-    .attr("d", arcOver)
-    .style("filter", "url(#drop-shadow)");
-};
-
-
-var svg = d3.select("#pieChart").append("svg")
-  .attr("width", '100%')
-  .attr("height", '100%')
-  .attr('viewBox', '0 0 ' + Math.min(width, height) + ' ' + Math.min(width, height))
-  .attr('preserveAspectRatio', 'xMinYMin')
-  .append("g")
-  .attr("transform", "translate(" + radius + "," + height / 2 + ")")
-  .style("filter", "url(#drop-shadow)");
-
-
-// Create Drop Shadow on Pie Chart
-var defs = svg.append("defs");
-var filter = defs.append("filter")
-    .attr("id", "drop-shadow")
-    .attr("height", "130%");
-
-filter.append("feGaussianBlur")
-    .attr("in", "SourceAlpha")
-    .attr("stdDeviation", 5.5)
-    .attr("result", "blur");
-
-filter.append("feOffset")
-    .attr("in", "blur")
-    .attr("dx", 0)
-    .attr("dy", 0)
-    .attr("result", "offsetBlur");
-
-var feMerge = filter.append("feMerge");
-feMerge.append("feMergeNode")
-    .attr("in", "offsetBlur")
-feMerge.append("feMergeNode")
-    .attr("in", "SourceGraphic");
-
-
-// toggle to allow animation to halfway finish before switching segment again
-var buttonToggle = true;
-var switchToggle = () => {
-  setTimeout(() => {
-    buttonToggle = true;
-  }, 1500)
+#segmentText {
+  width: 100%;
+  transition: padding .7s ease, line-height .7s ease;
+  padding: 15px 20px 20px;
+  font-size: calc( 14px + (21 - 14) * (100vw - 200px) / (1314 - 200));
+  line-height: 28px;
+}
+@media screen and (max-width: 200px) {
+  #segmentText {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 1314px) {
+  #segmentText {
+    font-size: 21px;
+  }
 }
 
-var timeline = new TimelineLite();
-
-var g = svg.selectAll("path")
-  .data(pie(data))
-  .enter().append("path")
-  .style("fill", function(d) {
-    return color(d.data.Title);
-  })
-  .attr("d", arc)
-  .style("fill", function(d) {
-    return color(d.data.Title);
-  })
-  .on("click", function(d) {
+@media (max-width: 360px) {
+  div.pie-container {
+    padding: 10px 12%;
+  }
+  div.pie-container #pieChart {
+    counter-reset: break-point 40;
+  }
+  div.pie-container #pieChart svg {
+    width: 100%;
+  }
+  div.pie-container #pieText {
+    margin-top: 15px;
+  }
+  div.pie-container #pieText .panel {
+    height: 230px;
+    padding: 0;
+  }
+  div.pie-container #pieText .panel #segmentTitle {
+    padding: 2px 4px 4px;
+  }
+  div.pie-container #pieText .panel #segmentText {
+    padding: 2px 4px 4px;
+    line-height: 16px;
+  }
+}
+@media (min-width: 360.02px) and (max-width: 442px) {
+  div.pie-container {
+    padding: 10px 10%;
+  }
+  div.pie-container #pieChart {
+    counter-reset: break-point 53;
+  }
+  div.pie-container #pieChart svg {
+    width: 70%;
+  }
+  div.pie-container #pieText {
+    margin-top: 15px;
+  }
+  div.pie-container #pieText .panel {
+    height: 210px;
+    padding: 0;
+  }
+  div.pie-container #pieText .panel #segmentTitle {
+    padding: 4px;
+  }
+  div.pie-container #pieText .panel #segmentText {
+    padding: 4px;
+    line-height: 18px;
+  }
+}
+@media (min-width: 442.02px) and (max-width: 575.98px) {
+  div.pie-container {
+    padding: 10px 10%;
+  }
+  div.pie-container #pieChart {
+    counter-reset: break-point 60;
+  }
+  div.pie-container #pieChart svg {
+    width: 70%;
+  }
+  div.pie-container #pieText {
+    margin-top: 15px;
+  }
+  div.pie-container #pieText .panel {
+    height: 200px;
+    padding: 0;
     
-    if(buttonToggle) {
-      buttonToggle = false;
-      switchToggle();
-      
-      change(d, this);
-      
-      var timeline = new TimelineLite();
-
-      //TweenMax.set(".panel", {perspective:800});
-      //TweenMax.set(".content-wrapper", {transformStyle:"preserve-3d"});
-
-      timeline.to('.content-wrapper', .5, {
-        rotationX: '90deg',
-        opacity: 0,
-        ease: Linear.easeNone,
-        onComplete: () => {$('.content-wrapper').hide();}
-      }).to('.panel', .5, {
-        width: '0%',
-        opacity: .05,
-        ease: Linear.easeNone,
-        onComplete: () => {
-          $('#segmentTitle').replaceWith(`<h1 id="segmentTitle">${d.data.Title} - ${Math.round((d.data.Amount/total) * 1000) / 10}%</h1>`);
-          $('#segmentText').replaceWith('<p id="segmentText">' + d.data.Description + '</p>');
-          $('.panel').css('background-color', `${ColorLuminance(color(d.data.Title), -0.3)}`)
-        }
-      });
-
-
-      timeline.to('.panel', .5, {
-        width: '100%',
-        opacity: 1,
-        ease: Linear.easeNone,
-        onComplete: () => {$('.content-wrapper').show();}
-      }).to('.content-wrapper', .5, {
-        rotationX: '0deg',
-        opacity: 1,
-        ease: Linear.easeNone,
-      })
-    }
-  });
-
-
-timeline.from('#pieChart', .5, {
-  rotation: '-120deg',
-  scale: .1,
-  opacity: 0,
-  ease: Power3.easeOut,
-}).from('.panel', .75, {
-  width: '0%',
-  opacity: 0,
-  ease: Linear.easeNone,
-  onComplete: () => {$('.content-wrapper').show();}
-}, '+=.55').from('.content-wrapper', .75, {
-  rotationX: '-90deg',
-  opacity: 0,
-  ease: Linear.easeNone,
-})
-
-
-// Function to darken Hex colors
-function ColorLuminance(hex, lum) {
-
-  // validate hex string
-  hex = String(hex).replace(/[^0-9a-f]/gi, '');
-  if (hex.length < 6) {
-    hex = hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2];
   }
-  lum = lum || 0;
-
-  // convert to decimal and change luminosity
-  var rgb = "#", c, i;
-  for (i = 0; i < 3; i++) {
-    c = parseInt(hex.substr(i*2,2), 16);
-    c = Math.round(Math.min(Math.max(0, c + (c * lum)), 255)).toString(16);
-    rgb += ("00"+c).substr(c.length);
+  div.pie-container #pieText .panel #segmentTitle {
+    padding: 4px;
   }
-
-  return rgb;
+  div.pie-container #pieText .panel #segmentText {
+    padding: 0 4px 4px;
+    line-height: 21px;
+  }
 }
-    </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        </div>
-      </div>
-    </div>
-    <div class="skw-page__half skw-page__half--right">
-      <div class="skw-page__skewed">
-        <div class="skw-page__content">
-        	<div class="pie-container">
-  <div class="row">
-    <div id="pieText" class="col-md-7 text-container">
-      <div class="panel">
-        <div class="content-wrapper">
-          <h1 id="segmentTitle">Select Fragment</h1>
-          <p id="segmentText">Detailed information about internal systems and business operations.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-
-
-<!-- page three -->  	
-  <div class="skw-page skw-page-3">
-    <div class="skw-page__half skw-page__half--left">
-      <div class="skw-page__skewed">a
-        <div class="skw-page__content">
-        	
-        </div>
-      </div>
-    </div>
-    <div class="skw-page__half skw-page__half--right">
-      <div class="skw-page__skewed">
-        <div class="skw-page__content">
-
-          <h2 class="skw-page__heading">Page 3</h2>
-          <p class="skw-page__description">The end is near, I promise!</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-
-
-<!-- 	page four -->
-
-  <div class="skw-page skw-page-4">
-    <div class="skw-page__half skw-page__half--left">
-      <div class="skw-page__skewed">
-        <div class="skw-page__content">
-          <h2 class="skw-page__heading">Page 4</h2>
-          <p class="skw-page__description">Ok, ok, just one more scroll!</p>
-        </div>
-      </div>
-    </div>
-    <div class="skw-page__half skw-page__half--right">
-      <div class="skw-page__skewed">
-        <div class="skw-page__content"></div>
-      </div>
-    </div>
-  </div>
-
-
-
-
-
-
-
-
-
-<!-- 	page five -->
-  <div class="skw-page skw-page-5">
-    <div class="skw-page__half skw-page__half--left">
-      <div class="skw-page__skewed">
-        <div class="skw-page__content"></div>
-      </div>
-    </div>
-    <div class="skw-page__half skw-page__half--right">
-      <div class="skw-page__skewed">
-        <div class="skw-page__content">
-          <h2 class="skw-page__heading">Epic finale</h2>
-          <p class="skw-page__description">
-            Feel free to check 
-            <a class="skw-page__link" href="https://codepen.io/suez/pens/public/" target="_blank">my other pens</a> and follow me on 
-            <a class="skw-page__link" href="https://twitter.com/NikolayTalanov" target="_blank">Twitter</a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<script type="text/javascript">
-	$(document).ready(function() {
-
-  var curPage = 1;
-  var numOfPages = $(".skw-page").length;
-  var animTime = 1000;
-  var scrolling = false;
-  var pgPrefix = ".skw-page-";
-
-  function pagination() {
-    scrolling = true;
-    $()
-    $(pgPrefix + curPage).removeClass("inactive").addClass("active");
-    $(pgPrefix + (curPage - 1)).addClass("inactive");
-    $(pgPrefix + (curPage + 1)).removeClass("active");
-
-
-    setTimeout(function() {
-      scrolling = false;
-    }, animTime);
-  };
-
-  function navigateUp() {
-    if (curPage == 1){
-    	$("#myName").css("opacity",1);
-    	return;
-    }
-    curPage--;
-     if (curPage == 1){
-    	$("#myName").css("opacity",1);
-    	
-    }
-    pagination();
-  };
-
-  function navigateDown() {
-    if (curPage === numOfPages) return;
-    $("#myName").css("opacity",0)
-    curPage++;
-    pagination();
-  };
-
-  $(document).on("mousewheel DOMMouseScroll", function(e) {
-    if (scrolling) return;
-    if (e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0) {
-      navigateUp();
-    } else { 
-      navigateDown();
-    }
-  });
-
-  $(document).on("keydown", function(e) {
-    if (scrolling) return;
-    if (e.which === 38) {
-      navigateUp();
-    } else if (e.which === 40) {
-      navigateDown();
-    }
-  });
-
-});
-</script>
-
+@media (min-width: 576px) and (max-width: 637.98px) {
+  div.pie-container {
+    padding: 10px 12%;
+  }
+  div.pie-container #pieChart {
+    counter-reset: break-point 70;
+  }
+  div.pie-container #pieChart svg {
+    width: 60%;
+  }
+  div.pie-container #pieText {
+    margin-top: 20px;
+  }
+  div.pie-container #pieText .panel {
+    padding: 0;
+    height: 205px;
+  }
+  div.pie-container #pieText .panel #segmentTitle {
+    padding: 8px;
+  }
+  div.pie-container #pieText .panel #segmentText {
+    padding: 0 8px 8px;
+    line-height: 24px;
+  }
+}
+@media (min-width: 638px) and (max-width: 767px) {
+  div.pie-container {
+    padding: 10px 15%;
+  }
+  div.pie-container #pieChart {
+    counter-reset: break-point 80;
+  }
+  div.pie-container #pieChart svg {
+    width: 60%;
+  }
+  div.pie-container #pieText {
+    margin-top: 20px;
+  }
+  div.pie-container #pieText .panel {
+    padding: 0 3px;
+    height: 270px;
+  }
+  div.pie-container #pieText .panel #segmentTitle {
+    padding: 15px;
+  }
+  div.pie-container #pieText .panel #segmentText {
+    padding: 15px;
+    line-height: 27px;
+  }
+}
+@media (min-width: 767.02px) and (max-width: 965px) {
+  div.pie-container {
+    padding: 10px 4%;
+  }
+  div.pie-container #pieChart {
+    counter-reset: break-point 50;
+  }
+  div.pie-container #pieText .panel {
+    height: 82%;
+    padding: 0;
+  }
+  div.pie-container #pieText .panel #segmentTitle {
+    padding: 8px;
+  }
+  div.pie-container #pieText .panel #segmentText {
+    padding: 0 8px 8px;
+    line-height: 23px;
+  }
+}
+@media (min-width: 965.02px) and (max-width: 1314px) {
+  div.pie-container {
+    padding: 10px 5%;
+  }
+  div.pie-container #pieChart {
+    counter-reset: break-point 60;
+  }
+  div.pie-container #pieText .panel {
+    height: 70%;
+  }
+  div.pie-container #pieText .panel #segmentTitle {
+    padding: 10px;
+  }
+  div.pie-container #pieText .panel #segmentText {
+    padding: 5px 10px 10px;
+  }
+}
+@media (min-width: 1314.02px) and (max-width: 1480px) {
+  div.pie-container {
+    padding: 10px 8%;
+  }
+  div.pie-container #pieChart {
+    counter-reset: break-point 70;
+  }
+  div.pie-container #pieText .panel #segmentText {
+    padding-top: 10px;
+  }
+}
