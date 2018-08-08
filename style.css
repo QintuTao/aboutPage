@@ -4,7 +4,7 @@
   padding: 0;
 }
 body {
-  background: #000000;
+  background: #fee;
   font-family: 'Raleway';
 }
 .skw-pages {
@@ -69,7 +69,7 @@ body {
   background-size: cover;
 }
 .skw-page__half--left .skw-page__content {
-  padding-left: 20%;
+  padding-left: 30%;
   padding-right: 20%;
   transform-origin: 100% 0;
 }
@@ -109,10 +109,15 @@ body {
   background: #292929;
 }
 .skw-page-3 .skw-page__half--left .skw-page__content {
-
+   background: #292929;
 }
 .skw-page-3 .skw-page__half--right .skw-page__content {
-  background: #292929;
+  background-image: url("self-protrait2.jpeg");
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+  -ms-filter: blur(3px);
+  filter: blur(3px);
 }
 .skw-page-4 .skw-page__half--left .skw-page__content {
   background: #292929;
@@ -226,6 +231,7 @@ body {
 #segmentTitle, #segmentText {
   text-shadow: 1px 1px 3px #000, 1px 1px 3px #292929;
   text-align: center;
+  transform:skewX(10deg);
 }
 
 #segmentTitle {
@@ -328,7 +334,7 @@ body {
   div.pie-container #pieText .panel {
     height: 200px;
     padding: 0;
-    
+
   }
   div.pie-container #pieText .panel #segmentTitle {
     padding: 4px;
@@ -435,3 +441,21 @@ body {
     padding-top: 10px;
   }
 }
+
+
+
+
+
+
+/*page 5 css*/
+.bloc {
+  border-color: red;
+  background-color: blue;
+  font-size: 100px;
+}
+
+
+
+
+
+/*page 3 css*/
