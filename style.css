@@ -459,3 +459,45 @@ body {
 
 
 /*page 3 css*/
+.buttonRow {
+  height: 45vh;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.button {
+  display: inline-grid;
+  width: 15vw;
+  height: 30vh;
+  flex: auto;
+  margin:0 5%;
+  padding: 10px;
+  border: 3px solid #f7f7f7;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  transition: .3s;
+}
+.button:hover {
+  border-radius: 5px;
+  display: absolute;
+  z-index: 10;
+  cursor: pointer;
+   -webkit-transform: scale(1.2);
+  transform: scale(1.2) rotate(10deg) skewX(10deg);
+  background-color:#fedc14;
+  transition: 0.3s;
+  font-size: 1em;
+}
+.button:hover:after {
+  width: 100%;
+  left: 0;
+}
+.fas{
+  font-size: 5em;
+}
+.fab{
+  font-size: 5em;
+}
