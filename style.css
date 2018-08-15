@@ -123,13 +123,7 @@ body {
   background: #292929;
 }
 .skw-page-4 .skw-page__half--right .skw-page__content {
-
-}
-.skw-page-5 .skw-page__half--left .skw-page__content {
-
-}
-.skw-page-5 .skw-page__half--right .skw-page__content {
-  background: #292929;
+  background-image: url("street.jpg");
 }
 
 
@@ -500,4 +494,13 @@ body {
 }
 .fab{
   font-size: 5em;
+}
+
+/*navigate back button*/
+#navigateBackButton{
+  text-align: center;
+  width:90%;
+  background-color: rgba(0,0,0,0);
+  border: 2px solid white;
+
 }
